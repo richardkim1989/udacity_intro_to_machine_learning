@@ -1,12 +1,12 @@
 #!/usr/bin/python
 
-##Salary & Bonus
-
 import sys
 import pickle
 sys.path.append("../tools/")
 from feature_format import featureFormat, targetFeatureSplit
 dictionary = pickle.load( open("../final_project/final_project_dataset_modified.pkl", "r") )
+
+##Salary & Bonus
 
 ### list the features you want to look at--first item in the 
 ### list will be the "target" feature
@@ -107,16 +107,6 @@ print 'score_test = {0}'.format(reg.score(feature_test, target_test))
 
 ##Salary & Bonus without Outliers
 
-#!/usr/bin/python
-
-import sys
-import pickle
-sys.path.append("../tools/")
-from feature_format import featureFormat, targetFeatureSplit
-dictionary = pickle.load( open("../final_project/final_project_dataset_modified.pkl", "r") )
-
-### list the features you want to look at--first item in the 
-### list will be the "target" feature
 features_list = ["bonus", "salary"]
 data = featureFormat( dictionary, features_list, remove_any_zeroes=True)
 target, features = targetFeatureSplit( data )
